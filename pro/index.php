@@ -5,42 +5,22 @@ define('BASEDIR', __dir__);
 include BASEDIR . '/Common/Loader.php';
 spl_autoload_register('\\Common\\Loader::autoload');
 
-/* Common\Object::test(); */
-/* App\Controller\Home\Index::test(); */
+$obj = new Common\Object();
 
-echo "stack: \n";
-$stack = new SplStack();
+$obj->title = "hello";
 
-$stack->push("data1\n");
-$stack->push("data2\n");
-
-echo $stack->pop();
-echo $stack->pop();
+echo $obj->title, PHP_EOL;
 echo "\n";
 
-echo "Queue: \n";
-$queue = new SplQueue();
-
-$queue->enqueue("data1\n");
-$queue->enqueue("data2\n");
-
-echo $queue->dequeue();
-echo $queue->dequeue();
+echo $obj->tests("hello", 123);
 echo "\n";
 
-echo "heap: \n";
-$heap = new SplMinheap();
-
-$heap->insert("data1\n");
-$heap->insert("data2\n");
-
-echo $heap->extract();
-echo $heap->extract();
+echo Common\Object::xxx("world", 123456), PHP_EOL;
 echo "\n";
 
-echo "array: \n";
-$array = new SplFixedArray(10);
-$array[0] = 123;
-$array[9] = 1234;
+echo $obj, PHP_EOL;
+echo "\n";
 
-var_dump($array);
+echo $obj('hello'), PHP_EOL;
+
+
