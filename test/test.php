@@ -17,5 +17,3 @@ Test1::test();
 echo "\n";
 Test2::test();
 echo "\n";
-
-
