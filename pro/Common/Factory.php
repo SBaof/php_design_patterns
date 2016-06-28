@@ -9,4 +9,9 @@ class Factory
         $obj = new Object();
         return $obj;
     }
+
+    public static function createDatabase()
+    {
+        return Database::getInstance();
+    }
 }
