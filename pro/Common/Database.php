@@ -2,6 +2,13 @@
 
 namespace Common;
 
+interface IDatabase
+{
+    function conncet($host, $user, $passwd, $dbname);
+    function query($sql);
+    function close();
+}
+
 class Database
 {
     private static $db;
